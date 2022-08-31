@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Rain Tomorrow Prediction (Australia)</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../static/css/style.css">
+	</head>
+
+	<body>
+		<div class="wrapper">
+			<div class="inner">
+				<form action="/predict" method="GET">
+
+					<p style="font-size: 25px;">Rain Tomorrow Prediction (Australia) <span id="result" style="color: #a4f773"><br>{{will_rain_tomorrow}}</br></span></p>
+					<div class="input_container">
+
+						<div class="input_field">
+							<label class="form-group">
+								<input type="number" class="form-control"  name='MinTemp' step="any" min = -30.00 max = 60.00 id="t1">
+								<p>Minimum Tempreture (C)</p>
+							</label>
+						</div>
+	
+						<div class="input_field">
+							<label class="form-group">
+								<input type="number" class="form-control"  name='MaxTemp' step="any" min = -30.00 max = 60.00 id="t2">
+								<p>Maximum Tempreture (C)</p>
+							</label>
+						</div>
+						
+						<div class="input_field">
+							<label class="form-group">
+								<input type="number" class="form-control"  name='Rainfall' step="any" min = 0.00 max = 1000.00 id="t3">
+								<p>Rainfall (mm)</p>
+							</label>
+						</div>
+	
+						<div class="input_field">
+							<label class="form-group">
+								<input type="number" class="form-control"  name='Sunshine' step=0.1 min = 1.00 max = 16.00 id="t4">
+								<p >Sunshine (hours)</p>
+							</label>
+						</div>
+	
+						<div class="input_field">
+							<label class="form-group">
+								<input type="number" class="form-control"  name='WindGustSpeed' step="any" min = 1.00 max = 500.00 id="t5">
+								<p >Wind gust speed (km/h)</p>
+							</label>
+						</div>
+	
+						<div class="input_field">
+							<label class="form-group">
+								<input type="number" class="form-control"  name='Humidity9am' step=1 min = 1.00 max = 100.00  id="t6">
+								<p >Humidity at 9AM(%)</p>
+							</label>
+						</div>
+						
+						<div class="input_field">
+							<label class="form-group">
+								<input type="number" class="form-control"  name='Humidity3pm' step=1 min = 1.00 max = 100.00   id="t7">
+								<p >Humidity at 3PM(%)</p>
+							</label>
+						</div>				
+	
+						<div class="input_field">
+							<label class="form-group">
+								<input type="number" class="form-control"  name='Pressure9am' step="any" id="t8">
+								<p >Atmospheric pressure at 9AM (hpa)</p>
+							</label>
+						</div>
+	
+						<div class="input_field">
+							<label class="form-group">
+								<input type="number" class="form-control"  name='Temp9am' step="any" min = -30.00 max = 60.00   id="t9">
+								<p >Tempreture at  9AM(C)</p>
+							</label>
+						</div>	
+
+					<div>
+						<button value="Check Empty" onclick="return ValidateTextBox()">Predict
+							<i class="zmdi zmdi-arrow-right"></i>
+						</button>
+					</div>
+					
+					
+				</form>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			function ValidateTextBox() {
+				if (document.getElementById("t1").value.trim() == "") {alert("There is an empty field!");return false;}
+				if (document.getElementById("t2").value.trim() == "") {alert("There is an empty field!");return false;}
+				if (document.getElementById("t3").value.trim() == "") {alert("There is an empty field!");return false;}
+				if (document.getElementById("t4").value.trim() == "") {alert("There is an empty field!");return false;}
+				if (document.getElementById("t5").value.trim() == "") {alert("There is an empty field!");return false;}
+				if (document.getElementById("t6").value.trim() == "") {alert("There is an empty field!");return false;}
+				if (document.getElementById("t7").value.trim() == "") {alert("There is an empty field!");return false;}
+				if (document.getElementById("t8").value.trim() == "") {alert("There is an empty field!");return false;}
+				if (document.getElementById("t9").value.trim() == "") {alert("There is an empty field!");return false;}
+				if (document.getElementById("t10").value.trim() == "") {alert("There is an empty field!");return false;}
+			};
+		</script>
+		
+	</body>
+</html>
